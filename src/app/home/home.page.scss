@@ -20,7 +20,7 @@ html, body,  ion-app, ion-content, ion-page, .nav-decor, .custom-ion-content{
   z-index: 1;
   position: absolute;
   left: 25%;
-  width: 50%;
+  width: 10%;
 }
 
 #capture {
@@ -49,6 +49,14 @@ html, body,  ion-app, ion-content, ion-page, .nav-decor, .custom-ion-content{
   height: 50px;
   z-index: 11;
 }
+#sound {
+  position: absolute;
+  top: 30px;
+  left: calc(50% + 125px);
+  width: 50px;
+  height: 50px;
+  z-index: 11;
+}
 
 #close::part(native) {
   border-radius: 30px;
@@ -56,6 +64,10 @@ html, body,  ion-app, ion-content, ion-page, .nav-decor, .custom-ion-content{
 #capture::part(native) {
   border-radius: 30px;
 }
+
 #flip::part(native) {
+  border-radius: 30px;
+}
+#sound::part(native) {
   border-radius: 30px;
 }

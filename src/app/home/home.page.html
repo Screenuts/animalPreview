@@ -12,6 +12,9 @@
       <ion-button (click)="stopCamera()" expand="block" id="close">
         <ion-icon name="close-circle" slot="icon-only"></ion-icon>
       </ion-button>
+      <ion-button (click)="playSound()" expand="block" id="sound">
+        <ion-icon name="volume-up" slot="icon-only"></ion-icon>
+      </ion-button>
       <ion-button (click)="captureImage()" expand="block" id="capture">
         <ion-icon name="camera" slot="icon-only"></ion-icon>
       </ion-button>
@@ -21,6 +24,8 @@
     </div>
   </div>
   <ion-img [src]="image" *ngIf="image && !cameraActive"></ion-img>
-  <ion-button (click)="openCamera()" expand="full" *ngIf="!cameraActive">
-    Open Camera</ion-button>
+  <div *ngIf="!cameraActive">
+    <ion-button (click)="openCamera()" expand="full">
+      Open Camera</ion-button>
+  </div>
 </ion-content>

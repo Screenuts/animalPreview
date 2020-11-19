@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Plugins } from '@capacitor/core';
 const { CameraPreview } = Plugins;
 import { CameraPreviewOptions, CameraPreviewPictureOptions } from '@capacitor-community/camera-preview';
+import { Media } from '@ionic-native/media/ngx';
 
 // Needed for web registration
 import '@capacitor-community/camera-preview';
@@ -14,9 +15,10 @@ import '@capacitor-community/camera-preview';
 export class HomePage {
   image = null;
   cameraActive = false;
+  suono: any;
   // torchActive = false;
 
-  constructor() { }
+  constructor(private media: Media) { }
 
   openCamera() {
     const cameraPreviewOptions: CameraPreviewOptions = {
@@ -45,5 +47,11 @@ export class HomePage {
 
   flipCamera() {
     CameraPreview.flip();
+  }
+
+  playSound() {
+    this.suono = this.media.create('./assets/sound/miagolio.mp3');
+    this.suono.play();
+
   }
 }
